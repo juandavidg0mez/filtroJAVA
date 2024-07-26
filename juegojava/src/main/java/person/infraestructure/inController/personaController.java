@@ -8,7 +8,7 @@ import java.util.function.Consumer;
 import javax.swing.BorderFactory;
 
 import javax.swing.JButton;
-
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -65,15 +65,23 @@ public class personaController {
 
         JButton genero = new JButton("Genero: ");
         JTextField generoText = new JTextField();
-
+        // llamando hexagonal ciudad
+    
         ciudadService ciudadservice = new ciudadRepository(); 
         ciudadUseCase ciudadusecase = new ciudadUseCase(ciudadservice);
         ciudadController ciudadcontrolador = new ciudadController(ciudadusecase);
-        List<ciudad> listaciudades = ciudadcontrolador.listarCiudad();
+        ciudadcontrolador.listarCiudad();
 
-        String [] opcionesCiudad;
+        // List<ciudad> listaciudades = ciudadcontrolador.listarCiudad();
 
-        Consumer<ciudad> getCiudad = ciudad
+        // String [] opcionesCiudad;
+
+        // Consumer<ciudad> getCiudad = ciudadEstado -> opcionesCiudad.add(ciudadEstado.getNombreCiudad());
+        // listaciudades.forEach(getCiudad);
+
+        // opcionesCiudad = Lstciudad.toArray(new String[0]);
+        // JComboBox<String> opTgsComboBox = new JComboBox<>(opcionesCiudad);
+
 
         panel.add(labelName);
         panel.add(txtName);
@@ -90,7 +98,7 @@ public class personaController {
         panel.add(genero);
         panel.add(generoText);
         
-
+        panel.setPreferredSize(new Dimension(450, 120));
 
 
 
