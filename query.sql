@@ -1,19 +1,19 @@
 use juevoJavaCRUD;
 
 -- Procedimiento para buscar persona por hibilidad
-DELIMITER$$
+delimiter $$
 CREATE PROCEDURE buscar_persona_habilidad( in nombre_habilidad VARCHAR(50))
 BEGIN
-SELECT P.id_persona AS Codec_Person, SH.name AS Habilidad
+SELECT P.id AS Codec_Person, SH.name AS Habilidad
 FROM persons AS P 
-INNER JOIN persons_skill AS PS ON P.id = PS.id
-INNER JOIN skill AS SH ON PS.id = SH.id
-WHERE SH.name = nombre_habilidad;
-
-SELECT 
-
+INNER JOIN persons_skill AS PS ON P.id = PS.idperson
+INNER JOIN skill AS SH ON PS.idskill = SH.id
+WHERE SH.name = "nombre_habilidad";
 END$$
-DELIMITER;
+
+Delimiter ;
+
+CALL buscar_persona_habilidad("Rachos Lacer Boludo");
 
 
 --Insertar habilidad a persona(tabla muchos a muchos)
@@ -34,7 +34,7 @@ INSERT into skill (name) VALUES
 
 -- Agregar persona 
 
-SELECT * FROM gender;
+SELECT * FROM skill;
 INSERT INTO persons (name,lastname,idcity,address,age,email,idgender) VALUES
 (?,?,?,?,?,?, ?);
 
@@ -50,7 +50,21 @@ INSERT into stack (name) VALUES
 ("Rosario"),
 ("Canalizador de Energia");
 
-INSERT  INTO persons_skill (registration_date, idperson,idskill) VALUES;
-("2023-")
+INSERT  INTO persons_skill (registration_date, idperson,idskill) VALUES
+("2023-05-17", 1,5)
+
+INSERT  INTO persons_skill (registration_date, idperson,idskill) VALUES
+("2023-05-17", 1,2);
 
 
+
+
+
+
+SELECT * FROM persons_skill;.
+
+
+SELECT P.id AS Codec_Person, SH.name AS Habilidad
+FROM persons AS P 
+INNER JOIN persons_skill AS PS ON P.id = PS.idperson
+INNER JOIN skill AS SH ON PS.ididskill = SH.id;

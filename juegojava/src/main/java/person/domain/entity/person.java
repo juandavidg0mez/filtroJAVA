@@ -1,5 +1,9 @@
 package person.domain.entity;
 
+import java.util.List;
+
+import habilidad.domain.entity.habilidad;
+
 public class person {
     private int id_person;
     private String name;
@@ -9,10 +13,13 @@ public class person {
     private int age;
     private String email;
     private int idgenser;
+    List<habilidad> lsitaHabilidades;
+
     public person() {
     }
+    
     public person(int id_person, String name, String lastname, int id_city, String address, int age, String email,
-            int idgenser) {
+            int idgenser, List<habilidad> lsitaHabilidades) {
         this.id_person = id_person;
         this.name = name;
         this.lastname = lastname;
@@ -21,7 +28,9 @@ public class person {
         this.age = age;
         this.email = email;
         this.idgenser = idgenser;
+        this.lsitaHabilidades = lsitaHabilidades;
     }
+
     public int getId_person() {
         return id_person;
     }
@@ -69,6 +78,14 @@ public class person {
     }
     public void setIdgenser(int idgenser) {
         this.idgenser = idgenser;
+    }
+
+    public List<habilidad> getLsitaHabilidades() {
+        return lsitaHabilidades;
+    }
+
+    public void setLsitaHabilidades(List<habilidad> lsitaHabilidades) {
+        this.lsitaHabilidades = lsitaHabilidades;
     }
     
 

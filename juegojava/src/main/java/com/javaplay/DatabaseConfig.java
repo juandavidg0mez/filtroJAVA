@@ -4,11 +4,10 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DatabaseConfig {
-  
 
-    private static final String URL = "jdbc:mysql://roundhouse.proxy.rlwy.net:41600/railway";
+    private static final String URL = "jdbc:mysql://localhost:3306/juevoJavaCRUD";
     private static final String USER = "root";
-    private static final String PASSWORD = "FtjNcJYULtcbURPVLBrmAReMgZcdLjAK";
+    private static final String PASSWORD = "campus2023";
 
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(URL, USER, PASSWORD);

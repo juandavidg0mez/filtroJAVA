@@ -5,11 +5,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+
 import javax.swing.JOptionPane;
 
 import com.javaplay.DatabaseConfig;
 
-import habilidad.domain.entity.habilidad;
 import person.domain.entity.person;
 import person.domain.service.personService;
 
@@ -51,16 +51,24 @@ public class personaRepository implements personService{
         return null;
     }
 
-    @Override
-    public person asignarHabilidad(habilidad skill) {
-        
-        return null;
-    }
+   
 
     @Override
     public void eliminarPerson(int id_person) {
         
         
     }
+
+
+
+    @Override
+    public person asignarHabilidad(int id_skill) {
+        
+        return null;
+    }
+
+    
+
+  
     
 }
